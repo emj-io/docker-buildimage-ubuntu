@@ -1,0 +1,15 @@
+FROM ubuntu:14.04
+MAINTAINER Eric Johnson <ejohnson.pub@gmail.com>
+
+RUN apt-get -yqq update
+RUN apt-get upgrade
+RUN apt-get -yqq install curl lsb-release git
+RUN apt-get install build-essential git \
+    libcurl3 libcurl3-gnutls libcurl4-openssl-dev \
+    libxml2-dev libxslt1-dev libpcre3-dev libsqlite3-dev \
+    openjdk-7-jre-headless \
+    ruby
+
+RUN apt-get -yqq clean
+RUN gem install bundler
+
